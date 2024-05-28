@@ -1,0 +1,253 @@
+﻿<Page
+    x:Class="DevStar.Speed"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DevStar"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    NavigationCacheMode="Enabled"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="CommonResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--<DataTemplate x:Key="EnumComboBoxTemplate"
+                          x:DataType="x:String">
+                <TextBlock Text="{x:Bind Content, Mode=OneWay}" />
+            </DataTemplate>-->
+        </ResourceDictionary>
+        
+    </Page.Resources>
+    
+    <ScrollViewer Name="WaterFalls_ScrollView"
+                  Background="Transparent" >
+        <StackPanel Name="SpeedPanel"
+                    Spacing="8"
+                    Loaded="SpeedPanelLoaded"
+                    Style="{StaticResource SettingsStackStyle}">
+
+            <Grid Grid.Row="1"
+                  HorizontalAlignment="Stretch"
+                  Background="Transparent"
+                  Padding="{StaticResource StandardGridAlignMargin}" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Uid="SendContentHeader"
+                           Grid.Column="0"                           
+                           Style="{StaticResource TextBlockSubHeaderTextStyle}" />
+                <Button Grid.Column="1"
+                        Click="ClearButtonClicked"
+                        Style="{StaticResource BIAlignmentRightButtonStyle}">
+                    <FontIcon Glyph="&#xe74d;" />
+                </Button>
+            </Grid>
+
+            <TextBox x:Name="SendBox"
+                     TextChanged="SendTextChanged"
+                     TextWrapping="Wrap"
+                     MinHeight="100"
+                     Style="{StaticResource TextBoxSettingStyleStandard}">
+            </TextBox>
+            <TextBlock x:Name="TimeUse"
+                       TextAlignment="Left"
+                       FontFamily="Segoe UI, Segoe Fluent Icons, Segoe MDL2 Assets"
+                       FontSize="28"
+                       FontWeight="Normal"
+                       Text="用时：0s"
+                       IsTextSelectionEnabled="True"
+                       Margin="{StaticResource StandardSubTitleAlignMargin}" />
+
+            <TextBlock x:Uid="ProtocolsHeader"
+                       Margin="28,40,0,0"
+                       Style="{StaticResource TextBlockSubHeaderStyle}" />
+            <muxc:Expander x:Name="Expander"
+                           Margin="{StaticResource StandardCardAlignMargin}"
+                           HorizontalAlignment="Stretch"
+                           HorizontalContentAlignment="Stretch"
+                           VerticalAlignment="Stretch"
+                           VerticalContentAlignment="Stretch"
+                           IsExpanded="False"
+                           Background="Transparent"
+                           BorderBrush="Transparent"
+                           Padding="0">
+                <!--IsExpanded="{TemplateBinding StartExpanded}">-->
+                <muxc:Expander.Header>
+                    <Grid MinHeight="64">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Style="{StaticResource StackPanelInExpanderStyle}">
+                            <TextBlock x:Uid="ProtocolsHeaderText"
+                                       Style="{StaticResource SettingsPageItemHeaderStyle}"/>
+                            <TextBlock x:Uid="ProtocolsHelpTextBlock"
+                                       Style="{StaticResource SettingsPageItemDescriptionStyle}"/>
+                        </StackPanel>
+                        <ComboBox AutomationProperties.AccessibilityView="Content"
+                                  HorizontalAlignment="Right"
+                                  VerticalAlignment="Center"
+                                  ItemsSource="{x:Bind ViewModel.ProtocolList, Mode=OneWay}"
+                                  SelectedItem="{x:Bind ViewModel.CurrentProtocol, Mode=TwoWay}"
+                                  SelectionChanged="ProtocolChanged"
+                                  Style="{StaticResource ComboBoxSettingStyle}" />
+                    </Grid>
+                </muxc:Expander.Header>
+                <muxc:Expander.Content>
+                    <StackPanel >
+                        <TextBlock x:Uid="SerialHeader"
+                                   Margin="{StaticResource StandardSubTitleLeftAlignMargin}"
+                                   Style="{StaticResource TextBlockSubHeaderStyle}" />
+                        <local:ItemContainer x:Uid="Protocol_Serial"
+                                             Style="{StaticResource ItemContainerNonePadding}" >
+                            <ComboBox AutomationProperties.AccessibilityView="Content"
+                                      ItemsSource="{x:Bind ViewModel.SerialSpeedList, Mode=OneWay}"
+                                      SelectedItem="{x:Bind ViewModel.CurrentSerialSpeed, Mode=TwoWay}"
+                                      SelectionChanged="SerialSpeedChanged"
+                                      Style="{StaticResource ComboBoxSettingStyle}" />
+                        </local:ItemContainer>
+
+                        <TextBlock x:Uid="USBHeader"
+                                   Margin="{StaticResource StandardSubTitleLeftAlignMargin}"
+                                   Style="{StaticResource TextBlockSubHeaderStyle}" />
+                        <local:ItemContainer x:Uid="Protocol_USB"
+                                             Style="{StaticResource ItemContainerNonePadding}" >
+                            <ComboBox AutomationProperties.AccessibilityView="Content"
+                                      ItemsSource="{x:Bind ViewModel.USBSpeedList, Mode=OneWay}"
+                                      SelectedItem="{x:Bind ViewModel.CurrentUSBSpeed, Mode=TwoWay}"
+                                      SelectionChanged="USBSpeedChanged"
+                                      Style="{StaticResource ComboBoxSettingStyle}" />
+                        </local:ItemContainer>
+
+                        <TextBlock x:Uid="EthernetHeader"
+                                   Margin="{StaticResource StandardSubTitleLeftAlignMargin}"
+                                   Style="{StaticResource TextBlockSubHeaderStyle}" />
+                        <local:ItemContainer x:Uid="Protocol_Ethernet"
+                                             Style="{StaticResource ItemContainerNonePadding}" >
+                            <ComboBox AutomationProperties.AccessibilityView="Content"
+                                      ItemsSource="{x:Bind ViewModel.EthernetSpeedList, Mode=OneWay}"
+                                      SelectedItem="{x:Bind ViewModel.CurrentEthernetSpeed, Mode=TwoWay}"
+                                      SelectionChanged="EthernetSpeedChanged"
+                                      Style="{StaticResource ComboBoxSettingStyle}" />
+                        </local:ItemContainer>
+
+                        <TextBlock x:Uid="WIFIHeader"
+                                   Margin="{StaticResource StandardSubTitleLeftAlignMargin}"
+                                   Style="{StaticResource TextBlockSubHeaderStyle}" />
+                        <local:ItemContainer x:Uid="Protocol_WIFI"
+                                             Style="{StaticResource ItemContainerNonePadding}" >
+                            <ComboBox AutomationProperties.AccessibilityView="Content"
+                                      ItemsSource="{x:Bind ViewModel.WIFISpeedList, Mode=OneWay}"
+                                      SelectedItem="{x:Bind ViewModel.CurrentWIFISpeed, Mode=TwoWay}"
+                                      SelectionChanged="WIFISpeedChanged"
+                                      Style="{StaticResource ComboBoxSettingStyle}" />
+                        </local:ItemContainer>
+
+                        <TextBlock x:Uid="RS232Header"
+                                   Margin="{StaticResource StandardSubTitleLeftAlignMargin}"
+                                   Style="{StaticResource TextBlockSubHeaderStyle}" />
+                        <local:ItemContainer x:Uid="Protocol_RS232"
+                                   Style="{StaticResource ItemContainerNonePadding}" >
+                            <ComboBox AutomationProperties.AccessibilityView="Content"
+                                      ItemsSource="{x:Bind ViewModel.RS232SpeedList, Mode=OneWay}"
+                                      SelectedItem="{x:Bind ViewModel.CurrentRS232Speed, Mode=TwoWay}"
+                                      SelectionChanged="RS232SpeedChanged"
+                                      Style="{StaticResource ComboBoxSettingStyle}" />
+                        </local:ItemContainer>
+
+                        <TextBlock x:Uid="RS485Header"
+                                   Margin="{StaticResource StandardSubTitleLeftAlignMargin}"
+                                   Style="{StaticResource TextBlockSubHeaderStyle}" />
+                        <local:ItemContainer x:Uid="Protocol_RS485"
+                                             Style="{StaticResource ItemContainerNonePadding}" >
+                            <ComboBox AutomationProperties.AccessibilityView="Content"
+                                      ItemsSource="{x:Bind ViewModel.RS485SpeedList, Mode=OneWay}"
+                                      SelectedItem="{x:Bind ViewModel.CurrentRS485Speed, Mode=TwoWay}"
+                                      SelectionChanged="RS485SpeedChanged"
+                                      Style="{StaticResource ComboBoxSettingStyle}" />
+                        </local:ItemContainer>
+
+                        <TextBlock x:Uid="SPIHeader"
+                                   Margin="{StaticResource StandardSubTitleLeftAlignMargin}"
+                                   Style="{StaticResource TextBlockSubHeaderStyle}" />
+                        <local:ItemContainer x:Uid="Protocol_SPI"
+                                             Style="{StaticResource ItemContainerNonePadding}" >
+                            <ComboBox AutomationProperties.AccessibilityView="Content"
+                                      ItemsSource="{x:Bind ViewModel.SPISpeedList, Mode=OneWay}"
+                                      SelectedItem="{x:Bind ViewModel.CurrentSPISpeed, Mode=TwoWay}"
+                                      SelectionChanged="SPISpeedChanged"
+                                      Style="{StaticResource ComboBoxSettingStyle}" />
+                        </local:ItemContainer>
+
+                        <TextBlock x:Uid="I2CHeader"
+                                   Margin="{StaticResource StandardSubTitleLeftAlignMargin}"
+                                   Style="{StaticResource TextBlockSubHeaderStyle}" />
+                        <local:ItemContainer x:Uid="Protocol_I2C"
+                                             Style="{StaticResource ItemContainerNonePadding}" >
+                            <ComboBox AutomationProperties.AccessibilityView="Content"
+                                      ItemsSource="{x:Bind ViewModel.I2CSpeedList, Mode=OneWay}"
+                                      SelectedItem="{x:Bind ViewModel.CurrentI2CSpeed, Mode=TwoWay}"
+                                      SelectionChanged="I2CSpeedChanged"
+                                      Style="{StaticResource ComboBoxSettingStyle}" />
+                        </local:ItemContainer>
+
+                        <TextBlock x:Uid="CANHeader"
+                                   Margin="{StaticResource StandardSubTitleLeftAlignMargin}"
+                                   Style="{StaticResource TextBlockSubHeaderStyle}" />
+                        <local:ItemContainer x:Uid="Protocol_CAN"
+                                             Style="{StaticResource ItemContainerNonePadding}" >
+                            <ComboBox AutomationProperties.AccessibilityView="Content"
+                                      ItemsSource="{x:Bind ViewModel.CANSpeedList, Mode=OneWay}"
+                                      SelectedItem="{x:Bind ViewModel.CurrentCANSpeed, Mode=TwoWay}"
+                                      SelectionChanged="CANSpeedChanged"
+                                      Style="{StaticResource ComboBoxSettingStyle}" />
+                        </local:ItemContainer>
+
+                        <TextBlock x:Uid="BluetoothHeader"
+                                   Margin="{StaticResource StandardSubTitleLeftAlignMargin}"
+                                   Style="{StaticResource TextBlockSubHeaderStyle}" />
+                        <local:ItemContainer x:Uid="Protocol_Bluetooth"
+                                             Style="{StaticResource ItemContainerNonePadding}" >
+                            <ComboBox AutomationProperties.AccessibilityView="Content"
+                                      ItemsSource="{x:Bind ViewModel.BluetoothSpeedList, Mode=OneWay}"
+                                      SelectedItem="{x:Bind ViewModel.CurrentBluetoothSpeed, Mode=TwoWay}"
+                                      SelectionChanged="BluetoothSpeedChanged"
+                                      Style="{StaticResource ComboBoxSettingStyle}" />
+                        </local:ItemContainer>
+
+                        <TextBlock x:Uid="PCIEHeader"
+                                   Margin="{StaticResource StandardSubTitleLeftAlignMargin}"
+                                   Style="{StaticResource TextBlockSubHeaderStyle}" />
+                        <local:ItemContainer x:Uid="Protocol_PCIE"
+                                             Style="{StaticResource ItemContainerNonePadding}" >
+                            <ComboBox AutomationProperties.AccessibilityView="Content"
+                                      ItemsSource="{x:Bind ViewModel.PCIESpeedList, Mode=OneWay}"
+                                      SelectedItem="{x:Bind ViewModel.CurrentPCIESpeed, Mode=TwoWay}"
+                                      SelectionChanged="PCIESpeedChanged"
+                                      Style="{StaticResource ComboBoxSettingStyle}" />
+                        </local:ItemContainer>
+
+                    </StackPanel>
+                </muxc:Expander.Content>
+            </muxc:Expander>
+
+            <Frame x:Name="contentFrame" >
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition>
+                            <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                                <EntranceNavigationTransitionInfo />
+                                <!--<DrillInNavigationTransitionInfo />-->
+                            </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                        </NavigationThemeTransition>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,10 @@
+namespace DevStar
+{
+    [default_interface] runtimeclass Accumulate : Windows.UI.Xaml.Controls.Page
+    {
+        Accumulate();
+
+        IInspectable CurrentMethod;
+        Windows.Foundation.Collections.IObservableVector<String> MethodList{ get; };
+    }
+}

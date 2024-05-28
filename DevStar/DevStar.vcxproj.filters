@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Midl Include="App.idl" />
+    <Midl Include="MainPage.idl" />
+    <Midl Include="ItemContainer.idl">
+      <Filter>DevApp</Filter>
+    </Midl>
+    <Midl Include="CRCViewModel.idl">
+      <Filter>DevApp</Filter>
+    </Midl>
+    <Midl Include="EndianViewModel.idl">
+      <Filter>DevApp</Filter>
+    </Midl>
+    <Midl Include="SpeedViewModel.idl">
+      <Filter>DevApp</Filter>
+    </Midl>
+    <Midl Include="PathViewModel.idl">
+      <Filter>DevApp</Filter>
+    </Midl>
+    <Midl Include="MemorySpaceViewModel.idl">
+      <Filter>DevApp</Filter>
+    </Midl>
+    <Midl Include="RepeatViewModel.idl">
+      <Filter>DevApp</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="pch.cpp" />
+    <ClCompile Include="App.cpp" />
+    <ClCompile Include="MainPage.cpp" />
+    <ClCompile Include="$(GeneratedFilesDir)module.g.cpp" />
+    <ClCompile Include="LibraryResources.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="ScopedResourceLoader.cpp">
+      <Filter>Utils</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="pch.h" />
+    <ClInclude Include="LibraryResources.h">
+      <Filter>Utils\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="ScopedResourceLoader.h">
+      <Filter>Utils\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Utils\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewModelHelpers.h">
+      <Filter>DevApp</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewModelHelpers.idl.h">
+      <Filter>DevApp</Filter>
+    </ClInclude>
+    <ClInclude Include="FallSerializationHelpers.h">
+      <Filter>DevApp</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Assets\Wide310x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square150x150Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Square44x44Logo.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\SplashScreen.scale-200.png">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="Assets\Logo.png" />
+    <Image Include="Assets\Square44x44Logo.targetsize-256.png" />
+    <Image Include="Assets\Square44x44Logo.targetsize-256_altform-lightunplated.png" />
+    <Image Include="Assets\StoreLogo.scale-125.png" />
+    <Image Include="Assets\StoreLogo.scale-100.png" />
+    <Image Include="Assets\DevLogo-150.scale-100.png" />
+    <Image Include="Assets\DevLogo-200.scale-100.png" />
+    <Image Include="Assets\DevLogo-150.png" />
+    <Image Include="Assets\DevLogo-200.scale-200.png" />
+    <Image Include="Assets\StoreLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{e48dc53e-40b1-40cb-970a-f89935452892}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DevApp">
+      <UniqueIdentifier>{07cdd0f0-3645-4427-ae77-3294b510be83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils">
+      <UniqueIdentifier>{f5ea8df7-fc5d-4e66-aa47-6b9d484acb73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utils\inc">
+      <UniqueIdentifier>{ee2e8885-5bdb-4008-a7e2-0b31a8c84f1b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="PropertySheet.props" />
+    <None Include="packages.config" />
+    <None Include="DevStar_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Filter>DevApp</Filter>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="MainPage.xaml">
+      <Filter>DevApp</Filter>
+    </Page>
+    <Page Include="CommonResources.xaml">
+      <Filter>DevApp</Filter>
+    </Page>
+    <Page Include="SettingContainerStyle.xaml">
+      <Filter>DevApp</Filter>
+    </Page>
+    <Page Include="CRC.xaml">
+      <Filter>DevApp</Filter>
+    </Page>
+    <Page Include="Endian.xaml">
+      <Filter>DevApp</Filter>
+    </Page>
+    <Page Include="Speed.xaml">
+      <Filter>DevApp</Filter>
+    </Page>
+    <Page Include="Path.xaml">
+      <Filter>DevApp</Filter>
+    </Page>
+    <Page Include="MemorySpace.xaml">
+      <Filter>DevApp</Filter>
+    </Page>
+    <Page Include="Repeat.xaml">
+      <Filter>DevApp</Filter>
+    </Page>
+    <Page Include="Accumulate.xaml">
+      <Filter>DevApp</Filter>
+    </Page>
+    <Page Include="Macro.xaml">
+      <Filter>DevApp</Filter>
+    </Page>
+    <Page Include="Settings.xaml">
+      <Filter>DevApp</Filter>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PRIResource Include="Resources.resw">
+      <Filter>DevApp</Filter>
+    </PRIResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Natvis Include="$(MSBuildThisFileDirectory)..\..\natvis\wil.natvis" />
+  </ItemGroup>
+</Project>

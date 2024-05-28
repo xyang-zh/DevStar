@@ -1,0 +1,12 @@
+import "PathViewModel.idl";
+
+namespace DevStar
+{
+    [default_interface]
+    runtimeclass Path : Windows.UI.Xaml.Controls.Page
+    {
+        Path();
+
+        PathViewModel ViewModel{ get; };
+    }
+}

@@ -1,0 +1,13 @@
+import "EndianViewModel.idl";
+
+namespace DevStar
+{
+    runtimeclass Endian : Windows.UI.Xaml.Controls.Page
+    {
+        Endian();
+
+        Boolean TransModel{ get; set; };
+        Boolean EndianModel{ get; set; };
+        EndianViewModel ViewModel{ get; };
+    }
+}

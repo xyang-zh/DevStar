@@ -1,0 +1,92 @@
+﻿<Page
+    x:Class="DevStar.MemorySpace"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DevStar"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    NavigationCacheMode="Enabled"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="CommonResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--<DataTemplate x:Key="EnumComboBoxTemplate"
+                          x:DataType="x:String">
+                <TextBlock Text="{x:Bind Content, Mode=OneWay}" />
+            </DataTemplate>-->
+        </ResourceDictionary>
+
+    </Page.Resources>
+
+    <ScrollViewer Name="WaterFalls_ScrollView"
+                  Background="Transparent" >
+        <StackPanel Name="SpeedPanel"
+                    Spacing="8"
+                    Style="{StaticResource SettingsStackStyle}">
+
+            <TextBlock x:Uid="MemorySpaceIntroHeader"
+                       Style="{StaticResource TextBlockSubHeaderStyle}" />
+            <local:ItemContainer x:Uid="MemorySpaceIntro"
+                                 Style="{StaticResource ItemContainer}" >
+            </local:ItemContainer>
+
+            <Grid Grid.Row="1"
+                  HorizontalAlignment="Stretch"
+                  Background="Transparent"
+                  Padding="{StaticResource StandardGridAlignMargin}" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock x:Uid="MemorySpaceHeader"
+                           Grid.Column="0"                           
+                           Style="{StaticResource TextBlockSubHeaderTextStyle}" />
+                <Button Grid.Column="1"
+                        Click="ClearButtonClicked"
+                        Style="{StaticResource BIAlignmentRightButtonStyle}">
+                    <FontIcon Glyph="&#xe74d;" />
+                </Button>
+            </Grid>
+            <TextBox x:Name="MemorySpaceBox"
+                     TextChanged="MemorySpaceTextChanged"
+                     TextWrapping="Wrap"
+                     MinHeight="150"
+                     Style="{StaticResource TextBoxSettingStyleStandard}">
+            </TextBox>
+            
+            
+            <TextBlock x:Uid="MemorySpaceTotalHeader"
+                       Style="{StaticResource TextBlockSubHeaderStyle}" />
+            <!--<TextBox x:Name="MemorySpaceTotal"                     
+                     IsReadOnly="True"                     
+                     Style="{StaticResource TextBoxSettingStyleStandard}">
+            </TextBox>-->
+            <TextBlock x:Name="MemorySpaceTotal"
+                       TextAlignment="Left"
+                       FontFamily="Segoe UI, Segoe Fluent Icons, Segoe MDL2 Assets"
+                       FontSize="30"
+                       FontWeight="Medium"
+                       Text="0"
+                       IsTextSelectionEnabled="True"
+                       Margin="28,0,28,0" />
+            
+            <Frame x:Name="contentFrame" >
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition>
+                            <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                                <EntranceNavigationTransitionInfo />
+                                <!--<DrillInNavigationTransitionInfo />-->
+                            </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                        </NavigationThemeTransition>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

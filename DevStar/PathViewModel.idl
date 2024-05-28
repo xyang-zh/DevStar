@@ -1,0 +1,10 @@
+namespace DevStar
+{
+    runtimeclass PathViewModel 
+    {
+        PathViewModel();
+
+        IInspectable CurrentSystem;
+        Windows.Foundation.Collections.IObservableVector<String> SystemList{ get; };
+    }
+}

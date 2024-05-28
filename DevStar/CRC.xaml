@@ -1,0 +1,105 @@
+﻿<Page
+    x:Class="DevStar.CRC"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DevStar"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    NavigationCacheMode="Enabled"
+    mc:Ignorable="d">
+    
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="CommonResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!--<DataTemplate x:Key="EnumComboBoxTemplate"
+                          x:DataType="x:String">
+                <TextBlock Text="{x:Bind Content, Mode=OneWay}" />
+            </DataTemplate>-->
+            <Storyboard x:Name="EnterInfoBar">
+                <FadeOutThemeAnimation Storyboard.TargetName="InfoBar" SpeedRatio="0.5" />
+            </Storyboard>
+            <Storyboard x:Name="ExitInfoBar">
+                <FadeInThemeAnimation Storyboard.TargetName="InfoBar" SpeedRatio="0.5"/>
+            </Storyboard>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <ScrollViewer Name="WaterFalls_ScrollView">
+        <StackPanel Name="CrcStackPanel"
+                    Spacing="8"
+                    Loaded="CrcStackPanel_Loaded"
+                    Style="{StaticResource SettingsStackStyle}">
+
+            <TextBlock x:Uid="Algorithms"
+                       Style="{StaticResource TextBlockSubHeaderStyle}" />
+
+            <local:ItemContainer x:Uid="Avail_CRC"
+                                 Style="{StaticResource ItemContainer}" >
+                <ComboBox AutomationProperties.AccessibilityView="Content"
+                          ItemsSource="{x:Bind ViewModel.CRCList, Mode=OneWay}"
+                          SelectedItem="{x:Bind ViewModel.CurrentCRC, Mode=TwoWay}"
+                          SelectionChanged="CRC_SelectionChanged"
+                          Style="{StaticResource ComboBoxSettingStyle}" />
+            </local:ItemContainer>
+
+            <muxc:InfoBar x:Name="InfoBar"
+                          IsOpen="False"
+                          Severity="Error"
+                          Title="错误"
+                          Closed="InfoBar_Closed"
+                          Style="{StaticResource InfoBarStyle}" />
+
+            <Grid Grid.Row="1"
+                  HorizontalAlignment="Stretch"
+                  Background="Transparent"
+                  Padding="{StaticResource StandardGridAlignMargin}" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Uid="CRC_Data"
+                       Style="{StaticResource TextBlockSubHeaderStyle}" />
+                <Button Grid.Column="1"
+                        Click="ClearButtonClicked"
+                        Style="{StaticResource BIAlignmentRightButtonStyle}">
+                    <FontIcon Glyph="&#xe74d;" />
+                </Button>
+            </Grid>
+
+            <!--<TextBlock x:Uid="CRC_Data"
+                       Style="{StaticResource TextBlockSubHeaderStyle}" />-->
+            <TextBox x:Name="Target"
+                     TextWrapping="Wrap"
+                     InputScope="Number"
+                     TextChanged="CRC_Data_TextChanged"
+                     Text="{x:Bind CRC_Data, Mode=TwoWay}"
+                     MinHeight="100"
+                     Style="{StaticResource TextBoxSettingStyleStandard}">
+            </TextBox>
+
+            <TextBlock x:Uid="CRC_Value"
+                       Style="{StaticResource TextBlockSubHeaderStyle}" />
+            <TextBox x:Name="Crc"
+                     MinHeight="100"
+                     Style="{StaticResource TextBoxSettingStyleStandard}"
+                     IsReadOnly="True"/>
+            
+            <Frame x:Name="contentFrame" >
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition>
+                            <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                                <EntranceNavigationTransitionInfo />
+                                <!--<DrillInNavigationTransitionInfo />-->
+                            </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                        </NavigationThemeTransition>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

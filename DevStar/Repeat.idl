@@ -1,0 +1,9 @@
+namespace DevStar
+{
+    [default_interface] runtimeclass Repeat : Windows.UI.Xaml.Controls.Page
+    {
+        Repeat();
+        
+        Boolean AutoSearch{ get; set; };
+    }
+}

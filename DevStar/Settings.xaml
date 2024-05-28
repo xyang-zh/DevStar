@@ -1,0 +1,51 @@
+﻿<Page
+    x:Class="DevStar.Settings"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DevStar"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./CommonResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <ScrollViewer Name="WaterFalls_ScrollView"
+              Background="Transparent" >
+        <StackPanel Name="SettingsPanel"
+                Spacing="8"
+                Style="{StaticResource SettingsStackStyle}">
+
+            <TextBlock x:Uid="SettingsHeader"
+                       Margin="{StaticResource StandardSubTitleAlignMargin}"
+                       Style="{StaticResource TextBlockSubHeaderTextStyle}" />
+            <local:ItemContainer x:Uid="Settings"
+                                 Style="{StaticResource ItemContainer}" >
+                <HyperlinkButton x:Name="AboutMe"
+                                 Padding="0"
+                                 NavigateUri="https://github.com/xyang-zh"
+                                 ToolTipService.ToolTip="作者主页">
+                    <TextBlock  x:Uid="SourceCodes"
+                                TextWrapping="Wrap"/>
+                </HyperlinkButton>
+            </local:ItemContainer>
+            
+            <Frame x:Name="contentFrame" >
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition>
+                            <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                                <EntranceNavigationTransitionInfo />
+                            </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                        </NavigationThemeTransition>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

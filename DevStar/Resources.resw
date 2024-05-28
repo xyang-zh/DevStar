@@ -1,0 +1,849 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AddHeader.Text" xml:space="preserve">
+    <value>范围</value>
+  </data>
+  <data name="AddIntro.Header" xml:space="preserve">
+    <value>累加行为</value>
+  </data>
+  <data name="AddIntro.HelpText" xml:space="preserve">
+    <value>逐级累加、间隔累加</value>
+  </data>
+  <data name="AddIntroHeader.Text" xml:space="preserve">
+    <value>累加方式</value>
+  </data>
+  <data name="AddSummaryHeader.Text" xml:space="preserve">
+    <value>和</value>
+  </data>
+  <data name="Add_Nav.Content" xml:space="preserve">
+    <value>累积</value>
+    <comment>累计和</comment>
+  </data>
+  <data name="Algorithms.Text" xml:space="preserve">
+    <value>设置</value>
+    <comment>Various CRC algorithms</comment>
+  </data>
+  <data name="Align.Content" xml:space="preserve">
+    <value>根据长度对齐</value>
+  </data>
+  <data name="All.Content" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="App.Text" xml:space="preserve">
+    <value>DevStar</value>
+    <comment>AppName</comment>
+  </data>
+  <data name="Auto.Content" xml:space="preserve">
+    <value>自动</value>
+  </data>
+  <data name="Avail_CRC.Header" xml:space="preserve">
+    <value>校验</value>
+    <comment>Suggest</comment>
+  </data>
+  <data name="Avail_CRC.HelpText" xml:space="preserve">
+    <value>选择你要使用的校验算法</value>
+    <comment>All CRC</comment>
+  </data>
+  <data name="Binary_10.Content" xml:space="preserve">
+    <value>10进制</value>
+  </data>
+  <data name="Binary_16.Content" xml:space="preserve">
+    <value>16进制</value>
+  </data>
+  <data name="Blueth_125K.Content" xml:space="preserve">
+    <value>125 K</value>
+  </data>
+  <data name="Blueth_1M.Content" xml:space="preserve">
+    <value>1 M</value>
+  </data>
+  <data name="Blueth_24M.Content" xml:space="preserve">
+    <value>24 M</value>
+  </data>
+  <data name="Blueth_2M.Content" xml:space="preserve">
+    <value>2 M</value>
+  </data>
+  <data name="Blueth_3M.Content" xml:space="preserve">
+    <value>3 M</value>
+  </data>
+  <data name="Blueth_48M.Content" xml:space="preserve">
+    <value>48 M</value>
+  </data>
+  <data name="Bluetooth.Content" xml:space="preserve">
+    <value>蓝牙</value>
+  </data>
+  <data name="BluetoothHeader.Text" xml:space="preserve">
+    <value>蓝牙</value>
+  </data>
+  <data name="CAN.Content" xml:space="preserve">
+    <value>CAN</value>
+  </data>
+  <data name="CANHeader.Text" xml:space="preserve">
+    <value>CAN</value>
+  </data>
+  <data name="CAN_10K.Content" xml:space="preserve">
+    <value>10 K</value>
+  </data>
+  <data name="CAN_160K.Content" xml:space="preserve">
+    <value>160 K</value>
+  </data>
+  <data name="CAN_1M.Content" xml:space="preserve">
+    <value>1 M</value>
+  </data>
+  <data name="CAN_20K.Content" xml:space="preserve">
+    <value>20 K</value>
+  </data>
+  <data name="CAN_320K.Content" xml:space="preserve">
+    <value>320 K</value>
+  </data>
+  <data name="CAN_40K.Content" xml:space="preserve">
+    <value>40 K</value>
+  </data>
+  <data name="CAN_5K.Content" xml:space="preserve">
+    <value>5 K</value>
+  </data>
+  <data name="CAN_800K.Content" xml:space="preserve">
+    <value>800 K</value>
+  </data>
+  <data name="CAN_80K.Content" xml:space="preserve">
+    <value>80 K</value>
+  </data>
+  <data name="CRC_16_CCITT.Content" xml:space="preserve">
+    <value>CRC-16 (CCITT)</value>
+  </data>
+  <data name="CRC_16_CCITT_FALSE.Content" xml:space="preserve">
+    <value>CRC-16 (CCITT-FALSE)</value>
+  </data>
+  <data name="CRC_16_DNP.Content" xml:space="preserve">
+    <value>CRC-16 (DNP)</value>
+  </data>
+  <data name="CRC_16_IBM.Content" xml:space="preserve">
+    <value>CRC-16 (IBM)</value>
+  </data>
+  <data name="CRC_16_MAXIM.Content" xml:space="preserve">
+    <value>CRC-16 (MAXIM)</value>
+  </data>
+  <data name="CRC_16_MODBUS.Content" xml:space="preserve">
+    <value>CRC-16 (MODBUS)</value>
+  </data>
+  <data name="CRC_16_USB.Content" xml:space="preserve">
+    <value>CRC-16 (USB)</value>
+  </data>
+  <data name="CRC_16_X25.Content" xml:space="preserve">
+    <value>CRC-16 (X25)</value>
+  </data>
+  <data name="CRC_16_XMODEM.Content" xml:space="preserve">
+    <value>CRC-16 (XMODEM)</value>
+  </data>
+  <data name="CRC_32.Content" xml:space="preserve">
+    <value>CRC-32</value>
+  </data>
+  <data name="CRC_32_MPEG_2.Content" xml:space="preserve">
+    <value>CRC-32 (MPEG-2)</value>
+  </data>
+  <data name="CRC_4_ITU.Content" xml:space="preserve">
+    <value>CRC-4 (ITU)</value>
+  </data>
+  <data name="CRC_5_EPC.Content" xml:space="preserve">
+    <value>CRC-5 (EPC)</value>
+  </data>
+  <data name="CRC_5_ITU.Content" xml:space="preserve">
+    <value>CRC-5 (ITU)</value>
+  </data>
+  <data name="CRC_5_USB.Content" xml:space="preserve">
+    <value>CRC-5 (USB)</value>
+  </data>
+  <data name="CRC_6_ITU.Content" xml:space="preserve">
+    <value>CRC-6 (ITU)</value>
+  </data>
+  <data name="CRC_7_MMC.Content" xml:space="preserve">
+    <value>CRC-7 (MMC)</value>
+  </data>
+  <data name="CRC_8.Content" xml:space="preserve">
+    <value>CRC-8</value>
+  </data>
+  <data name="CRC_8_ITU.Content" xml:space="preserve">
+    <value>CRC-8 (ITU)</value>
+  </data>
+  <data name="CRC_8_MAXIM.Content" xml:space="preserve">
+    <value>CRC-8 (MAXIM)</value>
+  </data>
+  <data name="CRC_8_ROHC.Content" xml:space="preserve">
+    <value>CRC-8 (ROHC)</value>
+  </data>
+  <data name="CRC_Data.Text" xml:space="preserve">
+    <value>待校验值</value>
+    <comment>各种CRC校验</comment>
+  </data>
+  <data name="CRC_Nav.Content" xml:space="preserve">
+    <value>数据校验</value>
+  </data>
+  <data name="CRC_Value.Text" xml:space="preserve">
+    <value>CRC</value>
+  </data>
+  <data name="Custom.Content" xml:space="preserve">
+    <value>自定义</value>
+  </data>
+  <data name="CustomHeader.Text" xml:space="preserve">
+    <value>自定义</value>
+  </data>
+  <data name="DataWidths.Header" xml:space="preserve">
+    <value>宽度</value>
+  </data>
+  <data name="DataWidths.HelpText" xml:space="preserve">
+    <value>数据的位宽 （bits）</value>
+  </data>
+  <data name="Default.Content" xml:space="preserve">
+    <value>默认</value>
+  </data>
+  <data name="Endian.Text" xml:space="preserve">
+    <value>设置</value>
+    <comment>转换大小端</comment>
+  </data>
+  <data name="EndianItem.Header" xml:space="preserve">
+    <value>大小端</value>
+  </data>
+  <data name="EndianItem.HelpText" xml:space="preserve">
+    <value>向左大端，向右小端</value>
+  </data>
+  <data name="EndianReverse.Text" xml:space="preserve">
+    <value>转换</value>
+  </data>
+  <data name="EndianText.Text" xml:space="preserve">
+    <value>输入</value>
+  </data>
+  <data name="Endian_Nav.Content" xml:space="preserve">
+    <value>大小端</value>
+  </data>
+  <data name="Ethernet.Content" xml:space="preserve">
+    <value>以太网</value>
+  </data>
+  <data name="EthernetHeader.Text" xml:space="preserve">
+    <value>以太网</value>
+  </data>
+  <data name="ETH_10000M.Content" xml:space="preserve">
+    <value>10000 M</value>
+  </data>
+  <data name="ETH_1000M.Content" xml:space="preserve">
+    <value>1000 M</value>
+  </data>
+  <data name="ETH_100M.Content" xml:space="preserve">
+    <value>100 M</value>
+  </data>
+  <data name="ETH_10M.Content" xml:space="preserve">
+    <value>10 M</value>
+  </data>
+  <data name="ETH_3M.Content" xml:space="preserve">
+    <value>3 M</value>
+  </data>
+  <data name="Even.Content" xml:space="preserve">
+    <value>偶数</value>
+  </data>
+  <data name="FindBoxHeader.Text" xml:space="preserve">
+    <value>搜索</value>
+  </data>
+  <data name="ForceImplementation.Content" xml:space="preserve">
+    <value>强制补全</value>
+  </data>
+  <data name="I2C.Content" xml:space="preserve">
+    <value>I2C</value>
+  </data>
+  <data name="I2CHeader.Text" xml:space="preserve">
+    <value>I2C</value>
+  </data>
+  <data name="I2C_100K.Content" xml:space="preserve">
+    <value>100 K</value>
+  </data>
+  <data name="I2C_3p4M.Content" xml:space="preserve">
+    <value>3.4 M</value>
+  </data>
+  <data name="I2C_400K.Content" xml:space="preserve">
+    <value>400 K</value>
+  </data>
+  <data name="Linux.Content" xml:space="preserve">
+    <value>Linux</value>
+  </data>
+  <data name="MacroHeader.Text" xml:space="preserve">
+    <value>内容</value>
+  </data>
+  <data name="MacroImplHeader.Text" xml:space="preserve">
+    <value>预览</value>
+  </data>
+  <data name="MacroIntro.Header" xml:space="preserve">
+    <value>宏定义后边补充斜杠</value>
+  </data>
+  <data name="MacroIntro.HelpText" xml:space="preserve">
+    <value>默认空一格补全</value>
+  </data>
+  <data name="MacroIntroHeader.Text" xml:space="preserve">
+    <value>格式</value>
+  </data>
+  <data name="Macro_Nav.Content" xml:space="preserve">
+    <value>宏定义</value>
+  </data>
+  <data name="MemorySpaceHeader.Text" xml:space="preserve">
+    <value>单独</value>
+  </data>
+  <data name="MemorySpaceIntro.Header" xml:space="preserve">
+    <value>统计输入的数据总大小</value>
+  </data>
+  <data name="MemorySpaceIntro.HelpText" xml:space="preserve">
+    <value>可以用空格、逗号、新行分隔；不跟单位符号，默认byte；最低 Byte，最高 T，不区分大小写</value>
+  </data>
+  <data name="MemorySpaceIntroHeader.Text" xml:space="preserve">
+    <value>说明</value>
+  </data>
+  <data name="MemorySpaceTotalHeader.Text" xml:space="preserve">
+    <value>总共</value>
+  </data>
+  <data name="MemorySpace_Nav.Content" xml:space="preserve">
+    <value>总大小</value>
+    <comment>统计的数据总共大小</comment>
+  </data>
+  <data name="ModeIntro.Header" xml:space="preserve">
+    <value>最后一行是否也补全斜杠</value>
+  </data>
+  <data name="ModeIntro.HelpText" xml:space="preserve">
+    <value>默认不补全</value>
+  </data>
+  <data name="ModeIntroHeader.Text" xml:space="preserve">
+    <value>最后一行</value>
+  </data>
+  <data name="Nearest.Content" xml:space="preserve">
+    <value>最近处</value>
+  </data>
+  <data name="Odd.Content" xml:space="preserve">
+    <value>奇数</value>
+  </data>
+  <data name="Path.Header" xml:space="preserve">
+    <value>要转换的路径，以斜杠或者反斜杠表示</value>
+  </data>
+  <data name="Path.HelpText" xml:space="preserve">
+    <value>字符串会转成对应类型系统的格式</value>
+  </data>
+  <data name="PathHeader.Text" xml:space="preserve">
+    <value>路径输入</value>
+  </data>
+  <data name="PathTransDualHeader.Text" xml:space="preserve">
+    <value>双分隔符路径</value>
+  </data>
+  <data name="PathTransSingleHeader.Text" xml:space="preserve">
+    <value>单分隔符路径</value>
+  </data>
+  <data name="Path_Nav.Content" xml:space="preserve">
+    <value>路径</value>
+  </data>
+  <data name="PCIE.Content" xml:space="preserve">
+    <value>PCIE</value>
+  </data>
+  <data name="PCIE1_x16_4G.Content" xml:space="preserve">
+    <value>4 G</value>
+  </data>
+  <data name="PCIE1_x1_250M.Content" xml:space="preserve">
+    <value>250 M</value>
+  </data>
+  <data name="PCIE1_x4_1G.Content" xml:space="preserve">
+    <value>1 G</value>
+  </data>
+  <data name="PCIE1_x8_2G.Content" xml:space="preserve">
+    <value>2 G</value>
+  </data>
+  <data name="PCIE2_x16_8G.Content" xml:space="preserve">
+    <value>8 G</value>
+  </data>
+  <data name="PCIE2_x1_500M.Content" xml:space="preserve">
+    <value>500 M</value>
+  </data>
+  <data name="PCIE2_x4_2G.Content" xml:space="preserve">
+    <value>2 G</value>
+  </data>
+  <data name="PCIE2_x8_4G.Content" xml:space="preserve">
+    <value>4 G</value>
+  </data>
+  <data name="PCIE3_x16_15p754G.Content" xml:space="preserve">
+    <value>15.754 G</value>
+  </data>
+  <data name="PCIE3_x1_984p6M.Content" xml:space="preserve">
+    <value>984.6 M</value>
+  </data>
+  <data name="PCIE3_x4_3p938G.Content" xml:space="preserve">
+    <value>3.938 G</value>
+  </data>
+  <data name="PCIE3_x8_7p877G.Content" xml:space="preserve">
+    <value>7.877 G</value>
+  </data>
+  <data name="PCIE4_x16_31p508G.Content" xml:space="preserve">
+    <value>31.508 G</value>
+  </data>
+  <data name="PCIE4_x1_1p969G.Content" xml:space="preserve">
+    <value>1.969 G</value>
+  </data>
+  <data name="PCIE4_x4_7p877G.Content" xml:space="preserve">
+    <value>7.877 G</value>
+  </data>
+  <data name="PCIE4_x8_15p754G.Content" xml:space="preserve">
+    <value>15.754 G</value>
+  </data>
+  <data name="PCIE5_x16_49p2G.Content" xml:space="preserve">
+    <value>49.2 G</value>
+  </data>
+  <data name="PCIE5_x1_3p08G.Content" xml:space="preserve">
+    <value>3.08 G</value>
+  </data>
+  <data name="PCIE5_x4_12p3G.Content" xml:space="preserve">
+    <value>12.3 G</value>
+  </data>
+  <data name="PCIE5_x8_24p6G.Content" xml:space="preserve">
+    <value>24.6 G</value>
+  </data>
+  <data name="PCIEHeader.Text" xml:space="preserve">
+    <value>PCIE</value>
+  </data>
+  <data name="Protocol.Content" xml:space="preserve">
+    <value>Protocol</value>
+    <comment>选择协议</comment>
+  </data>
+  <data name="ProtocolsHeader.Text" xml:space="preserve">
+    <value>协议</value>
+  </data>
+  <data name="ProtocolsHeaderText.Text" xml:space="preserve">
+    <value>选择协议</value>
+  </data>
+  <data name="ProtocolsHelpTextBlock.Text" xml:space="preserve">
+    <value>测试该协议发送文本用时（支持低速设备）</value>
+  </data>
+  <data name="Protocol_Bluetooth.Header" xml:space="preserve">
+    <value>无线网络速度（不常用）</value>
+  </data>
+  <data name="Protocol_Bluetooth.HelpText" xml:space="preserve">
+    <value>单位：bps</value>
+  </data>
+  <data name="Protocol_CAN.Header" xml:space="preserve">
+    <value>汽车、嵌入式等领域常见，特别在汽车上应用广泛</value>
+  </data>
+  <data name="Protocol_CAN.HelpText" xml:space="preserve">
+    <value>单位：bps</value>
+  </data>
+  <data name="Protocol_Ethernet.Header" xml:space="preserve">
+    <value>有线以太网速度（超高速网络速度除外）</value>
+  </data>
+  <data name="Protocol_Ethernet.HelpText" xml:space="preserve">
+    <value>单位： bps</value>
+  </data>
+  <data name="Protocol_I2C.Header" xml:space="preserve">
+    <value>一种低速通信协议，传感器、显示屏等领域常见</value>
+  </data>
+  <data name="Protocol_I2C.HelpText" xml:space="preserve">
+    <value>单位：bps</value>
+  </data>
+  <data name="Protocol_PCIE.Header" xml:space="preserve">
+    <value>高速通信协议，PCIE1~5</value>
+  </data>
+  <data name="Protocol_PCIE.HelpText" xml:space="preserve">
+    <value>单位：bps</value>
+  </data>
+  <data name="Protocol_RS232.Header" xml:space="preserve">
+    <value>低速通信接口，台式机、测试仪器等较常见</value>
+  </data>
+  <data name="Protocol_RS232.HelpText" xml:space="preserve">
+    <value>单位：bps</value>
+  </data>
+  <data name="Protocol_RS485.Header" xml:space="preserve">
+    <value>嵌入式领域的一种硬件，常用Modbus协议</value>
+  </data>
+  <data name="Protocol_RS485.HelpText" xml:space="preserve">
+    <value>单位：bps</value>
+  </data>
+  <data name="Protocol_Serial.Header" xml:space="preserve">
+    <value>串口速度</value>
+  </data>
+  <data name="Protocol_Serial.HelpText" xml:space="preserve">
+    <value>单位：bps</value>
+  </data>
+  <data name="Protocol_SPI.Header" xml:space="preserve">
+    <value>嵌入式领域一种协议，速度能到达几十M，常用于Flash存储</value>
+  </data>
+  <data name="Protocol_SPI.HelpText" xml:space="preserve">
+    <value>单位：bps</value>
+  </data>
+  <data name="Protocol_USB.Header" xml:space="preserve">
+    <value>USB速度</value>
+  </data>
+  <data name="Protocol_USB.HelpText" xml:space="preserve">
+    <value>单位：bps</value>
+  </data>
+  <data name="Protocol_WIFI.Header" xml:space="preserve">
+    <value>无线网络速度（常用无线网络，wlan少使用，除外）</value>
+  </data>
+  <data name="Protocol_WIFI.HelpText" xml:space="preserve">
+    <value>单位：bps</value>
+  </data>
+  <data name="RepeatHeader.Text" xml:space="preserve">
+    <value>内容</value>
+  </data>
+  <data name="RepeatInfoHeader.Text" xml:space="preserve">
+    <value>统计</value>
+  </data>
+  <data name="RepeatIntro.Header" xml:space="preserve">
+    <value>自动搜索</value>
+  </data>
+  <data name="RepeatIntro.HelpText" xml:space="preserve">
+    <value>两种模式选择一种。自动搜索时用中英文逗号、分号、空格来分隔内容，手动搜索不限制</value>
+  </data>
+  <data name="RepeatIntroHeader.Text" xml:space="preserve">
+    <value>说明</value>
+  </data>
+  <data name="Repeat_Nav.Content" xml:space="preserve">
+    <value>重复项</value>
+    <comment>查找重复内容</comment>
+  </data>
+  <data name="RS232.Content" xml:space="preserve">
+    <value>RS232</value>
+  </data>
+  <data name="RS232Header.Text" xml:space="preserve">
+    <value>RS232</value>
+  </data>
+  <data name="RS232_110.Content" xml:space="preserve">
+    <value>110</value>
+  </data>
+  <data name="RS232_1200.Content" xml:space="preserve">
+    <value>1200</value>
+  </data>
+  <data name="RS232_150.Content" xml:space="preserve">
+    <value>150</value>
+  </data>
+  <data name="RS232_19200.Content" xml:space="preserve">
+    <value>19200</value>
+  </data>
+  <data name="RS232_2400.Content" xml:space="preserve">
+    <value>2400</value>
+  </data>
+  <data name="RS232_300.Content" xml:space="preserve">
+    <value>300</value>
+  </data>
+  <data name="RS232_4800.Content" xml:space="preserve">
+    <value>4800</value>
+  </data>
+  <data name="RS232_50.Content" xml:space="preserve">
+    <value>50</value>
+    <comment>(bps)</comment>
+  </data>
+  <data name="RS232_600.Content" xml:space="preserve">
+    <value>600</value>
+  </data>
+  <data name="RS232_75.Content" xml:space="preserve">
+    <value>75</value>
+  </data>
+  <data name="RS232_9600.Content" xml:space="preserve">
+    <value>9600</value>
+  </data>
+  <data name="RS485.Content" xml:space="preserve">
+    <value>RS485</value>
+  </data>
+  <data name="RS485Header.Text" xml:space="preserve">
+    <value>RS485</value>
+  </data>
+  <data name="RS485_115200.Content" xml:space="preserve">
+    <value>115200</value>
+  </data>
+  <data name="RS485_14400.Content" xml:space="preserve">
+    <value>14400</value>
+  </data>
+  <data name="RS485_19200.Content" xml:space="preserve">
+    <value>19200</value>
+  </data>
+  <data name="RS485_38400.Content" xml:space="preserve">
+    <value>38400</value>
+  </data>
+  <data name="RS485_56000.Content" xml:space="preserve">
+    <value>56000</value>
+  </data>
+  <data name="RS485_9600.Content" xml:space="preserve">
+    <value>9600</value>
+    <comment>(bps)</comment>
+  </data>
+  <data name="SendBox.Content" xml:space="preserve">
+    <value>SendBox</value>
+    <comment>测试发送文本时间</comment>
+  </data>
+  <data name="SendContentHeader.Text" xml:space="preserve">
+    <value>文本</value>
+  </data>
+  <data name="Serial.Content" xml:space="preserve">
+    <value>串口</value>
+  </data>
+  <data name="SerialHeader.Text" xml:space="preserve">
+    <value>串口</value>
+  </data>
+  <data name="Serial_115200.Content" xml:space="preserve">
+    <value>115200</value>
+  </data>
+  <data name="Serial_1200.Content" xml:space="preserve">
+    <value>1200</value>
+  </data>
+  <data name="Serial_14400.Content" xml:space="preserve">
+    <value>14400</value>
+  </data>
+  <data name="Serial_19200.Content" xml:space="preserve">
+    <value>19200</value>
+  </data>
+  <data name="Serial_230400.Content" xml:space="preserve">
+    <value>230400</value>
+  </data>
+  <data name="Serial_2400.Content" xml:space="preserve">
+    <value>2400</value>
+  </data>
+  <data name="Serial_28800.Content" xml:space="preserve">
+    <value>28800</value>
+  </data>
+  <data name="Serial_300.Content" xml:space="preserve">
+    <value>300</value>
+    <comment>(bps)</comment>
+  </data>
+  <data name="Serial_380400.Content" xml:space="preserve">
+    <value>380400</value>
+  </data>
+  <data name="Serial_38400.Content" xml:space="preserve">
+    <value>38400</value>
+  </data>
+  <data name="Serial_460800.Content" xml:space="preserve">
+    <value>460800</value>
+  </data>
+  <data name="Serial_4800.Content" xml:space="preserve">
+    <value>4800</value>
+  </data>
+  <data name="Serial_57600.Content" xml:space="preserve">
+    <value>57600</value>
+  </data>
+  <data name="Serial_600.Content" xml:space="preserve">
+    <value>600</value>
+  </data>
+  <data name="Serial_921600.Content" xml:space="preserve">
+    <value>921600</value>
+  </data>
+  <data name="Serial_9600.Content" xml:space="preserve">
+    <value>9600</value>
+  </data>
+  <data name="Settings.Header" xml:space="preserve">
+    <value>更多链接</value>
+  </data>
+  <data name="Settings.HelpText" xml:space="preserve">
+    <value />
+  </data>
+  <data name="SettingsHeader.Text" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="Settings_Nav.Content" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="SourceCodes.Text" xml:space="preserve">
+    <value>源代码</value>
+  </data>
+  <data name="Speed_Nav.Content" xml:space="preserve">
+    <value>传输协议</value>
+    <comment>计算发送数据的时间</comment>
+  </data>
+  <data name="SPI.Content" xml:space="preserve">
+    <value>SPI</value>
+  </data>
+  <data name="SPIHeader.Text" xml:space="preserve">
+    <value>SPI</value>
+  </data>
+  <data name="SPI_100K.Content" xml:space="preserve">
+    <value>100 K</value>
+  </data>
+  <data name="SPI_10M.Content" xml:space="preserve">
+    <value>400 K</value>
+  </data>
+  <data name="SPI_2M.Content" xml:space="preserve">
+    <value>3.4 M</value>
+  </data>
+  <data name="SystemHeader.Text" xml:space="preserve">
+    <value>系统类型</value>
+  </data>
+  <data name="Systemtype.Header" xml:space="preserve">
+    <value>linux或windows</value>
+  </data>
+  <data name="Systemtype.HelpText" xml:space="preserve">
+    <value>将字符串转成系统的指定格式</value>
+  </data>
+  <data name="TransMode.Header" xml:space="preserve">
+    <value>转换模式</value>
+  </data>
+  <data name="TransMode.HelpText" xml:space="preserve">
+    <value>单个：分别转换每个数字。  整体：将整个字符串作为一个整数转换</value>
+  </data>
+  <data name="USB.Content" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="USBHeader.Text" xml:space="preserve">
+    <value>USB</value>
+  </data>
+  <data name="USB_10G.Content" xml:space="preserve">
+    <value>10 G</value>
+  </data>
+  <data name="USB_12M.Content" xml:space="preserve">
+    <value>12 M</value>
+  </data>
+  <data name="USB_1p5M.Content" xml:space="preserve">
+    <value>1.5 M</value>
+  </data>
+  <data name="USB_480M.Content" xml:space="preserve">
+    <value>480 M</value>
+  </data>
+  <data name="USB_5G.Content" xml:space="preserve">
+    <value>5 G</value>
+  </data>
+  <data name="Width_16.Content" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="Width_32.Content" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="Width_64.Content" xml:space="preserve">
+    <value>64</value>
+  </data>
+  <data name="WIFI.Content" xml:space="preserve">
+    <value>无线</value>
+  </data>
+  <data name="WIFIHeader.Text" xml:space="preserve">
+    <value>无线</value>
+  </data>
+  <data name="WIFI_11M.Content" xml:space="preserve">
+    <value>11 M</value>
+  </data>
+  <data name="WIFI_150M.Content" xml:space="preserve">
+    <value>150 M</value>
+  </data>
+  <data name="WIFI_54M.Content" xml:space="preserve">
+    <value>54 M</value>
+  </data>
+  <data name="WIFI_633M.Content" xml:space="preserve">
+    <value>633 M</value>
+  </data>
+  <data name="WIFI_6p9G.Content" xml:space="preserve">
+    <value>6.9 G</value>
+  </data>
+  <data name="WIFI_9p6G.Content" xml:space="preserve">
+    <value>9.6 G</value>
+  </data>
+  <data name="Windows.Content" xml:space="preserve">
+    <value>Windows</value>
+  </data>
+</root>

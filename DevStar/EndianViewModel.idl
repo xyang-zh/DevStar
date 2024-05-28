@@ -1,0 +1,24 @@
+#include "ViewModelHelpers.idl.h"
+
+namespace DevStar
+{
+    runtimeclass EndianView 
+    {
+        EndianView();
+        EndianView(String w);
+
+        String Binary{ get; set; };
+    }
+
+    [default_interface]
+    runtimeclass EndianViewModel : Windows.UI.Xaml.Controls.Page, Windows.UI.Xaml.Data.INotifyPropertyChanged
+    {
+        EndianViewModel();
+ 
+        EndianView CurrentBinary{ get; set; };
+        Windows.Foundation.Collections.IObservableVector<EndianView> BinaryList{ get; set; };
+
+        IInspectable CurrentDataWidths;
+        Windows.Foundation.Collections.IObservableVector<String> DataWidthsList{ get; };
+    }
+}

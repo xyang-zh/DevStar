@@ -1,0 +1,13 @@
+namespace DevStar
+{
+    [default_interface] runtimeclass Macro : Windows.UI.Xaml.Controls.Page
+    {
+        Macro();
+
+        IInspectable CurrentMethod;
+        Windows.Foundation.Collections.IObservableVector<String> MethodList{ get; };
+
+        IInspectable CurrentImplMode;
+        Windows.Foundation.Collections.IObservableVector<String> ImplModeList{ get; };
+    }
+}

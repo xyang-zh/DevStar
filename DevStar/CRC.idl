@@ -1,0 +1,12 @@
+import "CRCViewModel.idl";
+
+namespace DevStar
+{
+    runtimeclass CRC : Windows.UI.Xaml.Controls.Page, Windows.UI.Xaml.Data.INotifyPropertyChanged
+    {
+        CRC();
+
+        String CRC_Data{ get; set; };
+        CRCViewModel  ViewModel{ get; };
+    }
+}

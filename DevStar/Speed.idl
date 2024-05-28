@@ -1,0 +1,11 @@
+import "SpeedViewModel.idl";
+
+namespace DevStar
+{
+    runtimeclass Speed : Windows.UI.Xaml.Controls.Page
+    {
+        Speed();
+
+        SpeedViewModel  ViewModel{ get; };
+    }
+}

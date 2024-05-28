@@ -1,0 +1,12 @@
+#include "ViewModelHelpers.idl.h"
+
+namespace DevStar
+{
+    runtimeclass CRCViewModel : Windows.UI.Xaml.Data.INotifyPropertyChanged
+    {
+        CRCViewModel();
+
+        IInspectable CurrentCRC;
+        Windows.Foundation.Collections.IObservableVector<String> CRCList { get; };
+    }
+}

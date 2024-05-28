@@ -1,0 +1,8 @@
+namespace DevStar
+{
+    [default_interface]
+    runtimeclass MemorySpaceViewModel 
+    {
+        MemorySpaceViewModel();
+    }
+}

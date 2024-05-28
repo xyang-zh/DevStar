@@ -1,0 +1,7 @@
+namespace DevStar
+{
+    [default_interface] runtimeclass MainPage : Windows.UI.Xaml.Controls.Page
+    {
+        MainPage();
+    }
+}

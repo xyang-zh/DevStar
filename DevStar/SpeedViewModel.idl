@@ -1,0 +1,45 @@
+#include "ViewModelHelpers.idl.h"
+
+namespace DevStar
+{
+    runtimeclass SpeedViewModel : Windows.UI.Xaml.Controls.Page, Windows.UI.Xaml.Data.INotifyPropertyChanged
+    {
+        SpeedViewModel();
+        
+        IInspectable CurrentProtocol;
+        Windows.Foundation.Collections.IObservableVector<String> ProtocolList{ get; };
+
+        IInspectable CurrentSerialSpeed;
+        Windows.Foundation.Collections.IObservableVector<String> SerialSpeedList{ get; };
+
+        IInspectable CurrentUSBSpeed;
+        Windows.Foundation.Collections.IObservableVector<String> USBSpeedList{ get; };
+
+        IInspectable CurrentEthernetSpeed;
+        Windows.Foundation.Collections.IObservableVector<String> EthernetSpeedList{ get; };
+
+        IInspectable CurrentWIFISpeed;
+        Windows.Foundation.Collections.IObservableVector<String> WIFISpeedList{ get; };
+
+        IInspectable CurrentRS232Speed;
+        Windows.Foundation.Collections.IObservableVector<String> RS232SpeedList{ get; };
+
+        IInspectable CurrentRS485Speed;
+        Windows.Foundation.Collections.IObservableVector<String> RS485SpeedList{ get; };
+
+        IInspectable CurrentSPISpeed;
+        Windows.Foundation.Collections.IObservableVector<String> SPISpeedList{ get; };
+
+        IInspectable CurrentI2CSpeed;
+        Windows.Foundation.Collections.IObservableVector<String> I2CSpeedList{ get; };
+
+        IInspectable CurrentCANSpeed;
+        Windows.Foundation.Collections.IObservableVector<String> CANSpeedList{ get; };
+
+        IInspectable CurrentPCIESpeed;
+        Windows.Foundation.Collections.IObservableVector<String> PCIESpeedList{ get; };
+
+        IInspectable CurrentBluetoothSpeed;
+        Windows.Foundation.Collections.IObservableVector<String> BluetoothSpeedList{ get; };
+    }
+}

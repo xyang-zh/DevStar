@@ -1,0 +1,201 @@
+﻿<Page
+    x:Class="DevStar.Endian"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DevStar"
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    NavigationCacheMode="Enabled"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="CommonResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate x:Key="ListViewItemTemplate"
+                          x:DataType="local:EndianView">
+                <ListViewItem >
+                    <TextBlock Text="{x:Bind Binary , Mode=TwoWay}" />
+                </ListViewItem>
+            </DataTemplate>
+        </ResourceDictionary>
+    </Page.Resources>
+
+    <ScrollViewer Name="WaterFalls_ScrollView"
+                  Background="Transparent" >
+        <StackPanel Name="EndiansPanel"
+                    Spacing="8"
+                    Loaded="EndiansPanel_Loaded"
+                    Style="{StaticResource SettingsStackStyle}">
+            <Grid Margin="26,20,26,0"
+                  HorizontalAlignment="Stretch"
+                  Background="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <!--<RowDefinition Height="Auto" />-->
+                </Grid.RowDefinitions>
+                <TextBlock x:Name="RowBits"
+                           Grid.Row="0"
+                           Margin="0,8,5,5"
+                           FontSize="18"
+                           FontWeight="SemiBold"
+                           HorizontalAlignment="Left"
+                           CharacterSpacing="15"
+                           IsTextSelectionEnabled="True" >
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                </TextBlock>
+                <TextBlock x:Name="ReverseBits"
+                           Grid.Row="1"
+                           Margin="0,8,5,5"
+                           FontSize="18"
+                           FontWeight="SemiBold"
+                           HorizontalAlignment="Left"
+                           CharacterSpacing="15"
+                           IsTextSelectionEnabled="True" >
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                    0000<Run CharacterSpacing="280"></Run>
+                </TextBlock>
+
+                <Grid Grid.Row="2"
+                      Margin="0,20,0,0"
+                      HorizontalAlignment="Stretch"
+                      Background="Transparent">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ListView x:Name="Binarys"
+                              Grid.Row="0"
+                              Grid.RowSpan="2"
+                              Grid.Column="0"
+                              Loaded="BinarysList_Loaded"
+                              ItemTemplate="{StaticResource ListViewItemTemplate}"
+                              ItemsSource="{x:Bind ViewModel.BinaryList, Mode=OneWay}"
+                              SelectedItem="{x:Bind ViewModel.CurrentBinary, Mode=TwoWay}">
+                    </ListView>
+
+                    <TextBlock  x:Name="Binary16"
+                                Grid.Row="0"
+                                Grid.Column="1"                             
+                                Text="0"
+                                IsTextSelectionEnabled="True"
+                                Style="{StaticResource TextBlockSubHeaderTextStyle}"
+                                Margin="10,10,0,0">
+                    </TextBlock>
+
+                    <TextBlock  x:Name="Binary10"
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Text="0"
+                                IsTextSelectionEnabled="True"
+                                Style="{StaticResource TextBlockSubHeaderTextStyle}"
+                                Margin="10,10,0,0">
+                    </TextBlock>
+                </Grid>
+            </Grid>
+
+            <TextBlock x:Uid="Endian"
+                       Style="{StaticResource TextBlockSubHeaderStyle}" />
+            <local:ItemContainer x:Uid="EndianItem"
+                                 Style="{StaticResource ItemContainer}" >
+                <ToggleSwitch IsOn="{x:Bind EndianModel, Mode=TwoWay}"
+                              OffContent="大端"
+                              OnContent="小端 （常用）"/>
+            </local:ItemContainer>
+            <local:ItemContainer x:Uid="DataWidths"
+                                 Style="{StaticResource ItemContainer}" >
+                <ComboBox AutomationProperties.AccessibilityView="Content"
+                          ItemsSource="{x:Bind ViewModel.DataWidthsList, Mode=OneWay}"
+                          SelectedItem="{x:Bind ViewModel.CurrentDataWidths, Mode=TwoWay}"
+                          SelectionChanged="DataWidth_Changed"
+                          Style="{StaticResource ComboBoxSettingStyle}" />
+            </local:ItemContainer>
+            
+            <muxc:InfoBar x:Name="InfoBar"
+                          IsOpen="False"
+                          Severity="Error"
+                          Title="错误"
+                          Style="{StaticResource InfoBarStyle}"/>
+
+            <!--<TextBlock x:Uid="EndianText"
+                       Style="{StaticResource TextBlockSubHeaderStyle}" />-->
+            <Grid Grid.Row="1"
+                  HorizontalAlignment="Stretch"
+                  Background="Transparent"
+                  Padding="{StaticResource StandardGridAlignMargin}" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock x:Uid="EndianText"
+                       Style="{StaticResource TextBlockSubHeaderStyle}" />
+                <Button Grid.Column="1"
+                        Click="ClearButtonClicked"
+                        Style="{StaticResource BIAlignmentRightButtonStyle}">
+                    <FontIcon Glyph="&#xe74d;" />
+                </Button>
+            </Grid>
+            <TextBox x:Name="EndianText"
+                     TextChanged="EndianContents_Changed"
+                     Style="{StaticResource TextBoxSettingStyleStandard}">
+            </TextBox>
+
+            <TextBlock x:Uid="EndianReverse"
+                       Style="{StaticResource TextBlockSubHeaderStyle}" />
+            <TextBox x:Name="EndianReverse"
+                     IsReadOnly="True"
+                     Style="{StaticResource TextBoxSettingStyleStandard}" />
+
+            <Frame x:Name="contentFrame" >
+                <Frame.ContentTransitions>
+                    <TransitionCollection>
+                        <NavigationThemeTransition>
+                            <NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                                <EntranceNavigationTransitionInfo />
+                                <!--<DrillInNavigationTransitionInfo />-->
+                            </NavigationThemeTransition.DefaultNavigationTransitionInfo>
+                        </NavigationThemeTransition>
+                    </TransitionCollection>
+                </Frame.ContentTransitions>
+            </Frame>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

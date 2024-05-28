@@ -1,0 +1,7 @@
+namespace DevStar
+{
+    [default_interface] runtimeclass RepeatViewModel 
+    {
+        RepeatViewModel();
+    }
+}

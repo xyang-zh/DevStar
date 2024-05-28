@@ -1,0 +1,8 @@
+namespace DevStar
+{
+    [default_interface]
+    runtimeclass MemorySpace : Windows.UI.Xaml.Controls.Page
+    {
+        MemorySpace();
+    }
+}
